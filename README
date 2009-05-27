@@ -1,0 +1,13 @@
+Pusher -- The Rack App that Pushes
+==================================
+
+Pusher is a Rack middleware that implement Ajax Push aka Comet
+http://en.wikipedia.org/wiki/Comet_(programming)
+
+Awesome features
+* Fully asynchronous
+* Fault tolerant client side library
+* Usable inside any Rack application
+* Easy to install, configure, scale
+
+(c) macournoyer

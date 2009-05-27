@@ -1,0 +1,20 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+  "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <title>index</title>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.3/prototype.js"></script>
+  <script type="text/javascript" src="/pusher.js"></script>
+  <script type="text/javascript" charset="utf-8">
+    new Pusher.Client("/pusher?channel_id=1&session_id=1", function(data) {
+      $("log").insert({ bottom: "<p>" + data + "</p>" });
+    });
+  </script>
+</head>
+<body>
+  <h1>Push It!</h1>
+  <div id="log">
+  </div>
+</body>
+</html>
