@@ -6,6 +6,12 @@ Pusher.XhrStream = Class.create(Pusher.Transport, {
     new Ajax.Request(this.url, {
       method: 'get',
       parameters: 'transport=xhr_stream',
+      
+      onCreate: function(response) {
+        // Safari does not trigger onComplete when on error
+        if (Prototype.Browser.WebKit)
+          response.request.transport.onerror = self.reconnect.bind(self);
+      },
 
       onInteractive: function(transport) {
         var data = transport.responseText.slice(len).strip();
@@ -14,7 +20,7 @@ Pusher.XhrStream = Class.create(Pusher.Transport, {
       },
 
       onComplete: function() {
-        self.connect.bind(self).delay(self.RECONNECT_DELAY);
+        self.reconnect()
       }
     });
   }

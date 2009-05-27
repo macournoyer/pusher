@@ -1,9 +1,11 @@
 module Pusher
-  class Adapter
+  class App
     ASYNC_CALLBACK = "async.callback".freeze
     
     AsyncResponse = [-1, {}, []].freeze
     InvalidResponse = [500, {"Content-Type" => "text/html"}, ["Invalid request"]].freeze
+    
+    attr_reader :session_key, :channel_key
     
     def initialize(options={})
       @session_key = options[:session_key] || "session_id"

@@ -5,7 +5,5 @@ module Pusher
     TINY     = 0
     
     STRING   = [MAJOR, MINOR, TINY].join('.')
-    
-    CODENAME = "Push It Good".freeze
   end
 end

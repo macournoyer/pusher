@@ -13,7 +13,7 @@ use Rack::Sprockets, :path         => "/pusher.js",
 
 first = true
 map "/pusher" do
-  run Pusher::Adapter.new
+  run Pusher::App.new
 end
 
 map "/" do

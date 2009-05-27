@@ -1,6 +1,6 @@
-- Fix Safari not reconnecting on error (do not trigger onComplete)
+✓ Fix Safari not reconnecting on error (do not trigger onComplete)
 - Add specs
 - Add pluggable Channel backends (AMQP, in memory, etc)
 - Implement HtmlFile and SSE transports
 - Test JS client
-  
+- Fix multi tab/window issue w/ subdomains
