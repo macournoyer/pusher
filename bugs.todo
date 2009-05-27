@@ -1,6 +1,10 @@
 ✓ Fix Safari not reconnecting on error (do not trigger onComplete)
+- Generate session_id inside client
 - Add specs
 - Add pluggable Channel backends (AMQP, in memory, etc)
-- Implement HtmlFile and SSE transports
-- Test JS client
+- Implement HtmlFile transport
+✓ Implement SSE transport
+- Ping client
+- Test JS client w/ http://github.com/tobie/unittest_js
 - Fix multi tab/window issue w/ subdomains
+- Benchmark against Orbited

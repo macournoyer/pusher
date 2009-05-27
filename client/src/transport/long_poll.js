@@ -16,7 +16,9 @@ Pusher.LongPoll = Class.create(Pusher.Transport, {
         if (transport.status == 0) {
           self.reconnect();
         } else {
-          self.callback(transport.responseText.strip());
+          var data = transport.responseText.strip();
+          if (data.length > 0)
+            self.callback(data);
           self.connect.bind(self).defer();
         }
       }

@@ -8,7 +8,7 @@ Pusher.XhrStream = Class.create(Pusher.Transport, {
       parameters: 'transport=xhr_stream',
       
       onCreate: function(response) {
-        // Safari does not trigger onComplete when on error
+        // Safari does not trigger onComplete when an error occures while connecting
         if (Prototype.Browser.WebKit)
           response.request.transport.onerror = self.reconnect.bind(self);
       },
@@ -16,7 +16,7 @@ Pusher.XhrStream = Class.create(Pusher.Transport, {
       onInteractive: function(transport) {
         var data = transport.responseText.slice(len).strip();
         len = transport.responseText.length;
-        if (!data.blank()) self.callback(data);
+        if (data.length > 0) self.callback(data);
       },
 
       onComplete: function() {
