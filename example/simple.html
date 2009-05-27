@@ -11,9 +11,15 @@
       $("log").insert({ bottom: "<p>" + data + "</p>" });
     });
   </script>
+  <style type="text/css" media="screen">
+    body { font-family: Helvetica; }
+    #log { background: #eee; padding: 10px; }
+  </style>
 </head>
 <body>
   <h1>Push It!</h1>
+  <p>To send a message:</p>
+  <pre>ruby example/client.rb 1 "some message"</pre>
   <div id="log">
   </div>
 </body>
