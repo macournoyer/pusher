@@ -1,2 +1,4 @@
-require File.dirname(__FILE__) + "/transport/base.rb"
-Dir[File.dirname(__FILE__) + "/transport/*.rb"].each { |f| require f }
+require "pusher/transport/base"
+require "pusher/transport/long_poll"
+require "pusher/transport/sse"
+require "pusher/transport/xhr_stream"

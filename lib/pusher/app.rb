@@ -10,6 +10,7 @@ module Pusher
     def initialize(options={})
       @session_key = options[:session_key] || "session_id"
       @channel_key = options[:channel_key] || "channel_id"
+      @channel = options[:channel] || Channel::AMQP.new
     end
     
     def call(env)
@@ -20,8 +21,7 @@ module Pusher
       return InvalidResponse unless channel_id && session_id
       
       transport = Transport::Base.select(request)
-      channel = Channel.new(channel_id)
-      channel.subscribe(session_id, transport)
+      @channel.subscribe(channel_id, session_id, transport)
       
       EM.next_tick { env[ASYNC_CALLBACK].call transport.render }
       AsyncResponse
