@@ -1,7 +1,7 @@
 require File.dirname(__FILE__) + "/spec_helper"
 require "rack/mock"
 
-describe Pusher::App do
+EM.describe Pusher::App do
   before do
     @app = Pusher::App.new(:session_key => "thekeytoyourheart", :channel_key => "love")
     @request = Rack::MockRequest.new(@app)
@@ -14,5 +14,9 @@ describe Pusher::App do
   
   it "should return server error on missing parameters" do
     @request.get("/").should be_server_error
+  end
+  
+  after do
+    done
   end
 end

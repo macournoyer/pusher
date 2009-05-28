@@ -12,7 +12,7 @@ EM.describe Pusher::Transport::XhrStream do
   end
   
   it "should pad with 256 bytes" do
-    @transport.renderer.queue.flatten.join.size.should == 256
+    @transport.renderer.enqueued_size.should == 256
     done
   end
   
