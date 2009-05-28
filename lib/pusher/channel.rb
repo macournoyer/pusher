@@ -1,19 +1,19 @@
+require "amqp"
+require "mq"
+
 module Pusher
   class Channel
     def initialize(id)
       @id = id
       @mq = MQ.new
       @topic = @mq.topic("pusher")
-    end
-    
-    def key
-      "channel.#{@id}"
+      @key = "channel.#{@id}"
     end
     
     def subscribe(session_id, transport)
-      queue = @mq.queue("#{key}.#{session_id}")
+      queue = @mq.queue("#{@key}.#{session_id}")
 
-      queue.bind(@topic, :key => key).subscribe do |message|
+      queue.bind(@topic, :key => @key).subscribe do |message|
         transport.write message
       end
 
@@ -22,7 +22,7 @@ module Pusher
     end
     
     def publish(message)
-      @topic.publish(message, :routing_key => key)
+      @topic.publish(message, :routing_key => @key)
     end
   end
 end

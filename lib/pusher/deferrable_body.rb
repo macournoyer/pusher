@@ -1,8 +1,14 @@
 class DeferrableBody
   include EM::Deferrable
   
+  attr_reader :queue
+  
   def initialize
     @queue = []
+  end
+  
+  def closed?
+    !!@deferred_status
   end
   
   def schedule_dequeue

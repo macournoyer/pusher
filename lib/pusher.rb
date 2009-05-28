@@ -1,6 +1,4 @@
 require "eventmachine"
-require "amqp"
-require "mq"
 
 require "pusher/version"
 require "pusher/app"

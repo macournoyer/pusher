@@ -27,6 +27,10 @@ module Pusher
         renderer.errback(&block)
       end
       
+      def closed?
+        renderer.closed?
+      end
+      
       Backends = {}
       
       def self.register(name)
