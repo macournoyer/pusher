@@ -1,6 +1,7 @@
 # Run w/ thin start -R example/config.ru
 $:.unshift File.dirname(__FILE__) + "/../lib"
 require "pusher"
+require "logger"
 
 use Rack::CommonLogger
 use Rack::ShowExceptions
@@ -12,7 +13,8 @@ use Rack::Sprockets, :path         => "/pusher.js",
                      :source_files => ["client/src/pusher.js"]
 
 map "/pusher" do
-  run Pusher::App.new(:channel => Pusher::Channel::AMQP.new)
+  run Pusher::App.new(:channel => Pusher::Channel::AMQP.new,
+                      :logger => Logger.new(STDOUT))
 end
 
 map "/" do

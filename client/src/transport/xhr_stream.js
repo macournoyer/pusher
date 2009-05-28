@@ -1,11 +1,12 @@
 Pusher.XhrStream = Class.create(Pusher.Transport, {
+  name: "xhr_stream",
+  
   connect: function() {
     var len = 0;
     var self = this;
     
     new Ajax.Request(this.url, {
       method: 'get',
-      parameters: 'transport=xhr_stream',
       
       onCreate: function(response) {
         // Safari does not trigger onComplete when an error occures while connecting

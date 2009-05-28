@@ -1,5 +1,5 @@
 ✓ Fix Safari not reconnecting on error (do not trigger onComplete)
-- Generate session_id inside client
+✓ Generate session_id inside client
 ✓ Add specs
 ✓ Add pluggable Channel backends (AMQP, in memory, etc)
 - Implement HtmlFile transport

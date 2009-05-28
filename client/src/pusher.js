@@ -2,6 +2,7 @@ var Pusher = {
   Version: '1.0'
 };
 
+//= require "uuid"
 //= require "transport"
 
 // Select transport depending on browser
@@ -14,4 +15,3 @@ if (Prototype.Browser.WebKit || Prototype.Browser.Gecko) {
 } else {
   Pusher.Client = Pusher.LongPoll;
 }
-

@@ -1,10 +1,11 @@
 Pusher.LongPoll = Class.create(Pusher.Transport, {
+  name: "long_poll",
+  
   connect: function() {
     var self = this;
     
     new Ajax.Request(this.url, {
       method: 'get',
-      parameters: 'transport=long_poll',
       
       onCreate: function(response) {
         // Safari does not trigger onComplete when on error
