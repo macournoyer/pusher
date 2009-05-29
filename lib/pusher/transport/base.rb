@@ -37,8 +37,8 @@ module Pusher
         Backends[name.to_s] = self
       end
       
-      def self.select(request)
-        (Backends[request["transport"]] || Backends["default"]).new(request)
+      def self.select(transport)
+        Backends[transport] || Backends["default"]
       end
     end
   end

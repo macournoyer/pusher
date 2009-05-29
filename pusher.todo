@@ -2,9 +2,10 @@
 ✓ Generate session_id inside client
 ✓ Add specs
 ✓ Add pluggable Channel backends (AMQP, in memory, etc)
+- Implement Stomp channel backend
 - Implement HtmlFile transport
 ✓ Implement SSE transport
-- Ping client
+- Ping from client
 - Test JS client w/ http://github.com/tobie/unittest_js
 - Fix multi tab/window issue w/ subdomains
 - Benchmark against Orbited

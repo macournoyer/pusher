@@ -22,7 +22,7 @@ module Pusher
       return InvalidResponse unless channel_id && session_id
       @logger.info "Connection on channel #{channel_id} from #{session_id}" if @logger
       
-      transport = Transport::Base.select(request)
+      transport = Transport::Base.select(request["transport"]).new(request)
       transport.on_close { @logger.info "Connection closed on channel #{channel_id} from #{session_id}" } if @logger
       
       @channel.subscribe(channel_id, session_id, transport)
