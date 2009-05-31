@@ -6,6 +6,6 @@
 ✓ Implement SSE transport
 ✓ Ping clients
 - Test JS client w/ http://github.com/tobie/unittest_js
-- Fix multi tab/window issue w/ subdomains
+- Fix multi tab/window issue w/ subdomains (storing tab id in cookie?)
 - Implement Stomp channel backend
 - Benchmark against Orbited
