@@ -15,8 +15,9 @@ http://en.wikipedia.org/wiki/Comet_(programming)
 * Usable inside any Rack application
 * Easy to install, configure, scale
 
-== Important missing features!
+== Important missing features / bugs
 * Only works in 1 tab/window at the time
+* Client requires Prototype
 
 == Usage
 See example/
