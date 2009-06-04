@@ -1,4 +1,7 @@
-# Run w/ thin start -R example/config.ru
+# Sample Rack app using Pusher
+# 1) Start an AMQP server (like RabbitMQ) on localhost
+# 2) Run thin start -R example/config.ru
+# 3) Browse to http://localhost:3000/ and follow instructions on the page
 $:.unshift File.dirname(__FILE__) + "/../lib"
 require "pusher"
 require "logger"

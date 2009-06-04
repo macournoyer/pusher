@@ -7,6 +7,13 @@ module Pusher
     
     attr_reader :session_key, :channel_key, :channel, :logger, :ping_interval
     
+    # Create a new Pusher Rack app.
+    # Options:
+    #   session_key: the key in which the session unique ID will be passed in the request
+    #   channel_key: the key in which the channel unique ID will be passed in the request
+    #   channel: a channel object to subscribe to on new connections
+    #   logger: Logger instance to log to
+    #   ping_interval: interval at which to send ping message to clients
     def initialize(options={})
       @session_key = options[:session_key] || "session_id"
       @channel_key = options[:channel_key] || "channel_id"

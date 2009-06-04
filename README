@@ -1,13 +1,26 @@
-Pusher -- The Rack App that Pushes
-==================================
+= Pusher -- The Rack App that pushes (aka Rack::Comet)
 
 Pusher is a Rack middleware that implement Ajax Push aka Comet
 http://en.wikipedia.org/wiki/Comet_(programming)
 
-Awesome features
+== Supported transports
+* XHR Streaming transport on Firefox, Safari
+* Event-source transport on Opera
+- HtmlFile transport not yet implement on IE
+* Fallback to long poll on others
+
+== Awesome features
 * Fully asynchronous
 * Fault tolerant client side library
 * Usable inside any Rack application
 * Easy to install, configure, scale
+
+== Important missing features!
+* Only works in 1 tab/window at the time
+
+== Usage
+See example/
+
+See pusher.todo for more
 
 (c) macournoyer
